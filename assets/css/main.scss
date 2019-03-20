@@ -6,3 +6,17 @@
 
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
+
+.body {
+  font-family: $global-font-family;
+  font-size: $type-size-8;
+}
+
+.divider {
+        background-color: white;
+        height: 80px;
+}
+
+.divider.line.opacity {
+    opacity: .2;
+}
