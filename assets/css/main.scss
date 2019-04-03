@@ -20,3 +20,64 @@
 .divider.line.opacity {
     opacity: .2;
 }
+
+.cvmax {
+                font-family: $global-font-family;
+                font-size: $type-size-3;
+                text-align: center;
+                width: 70%
+}
+
+.cv {
+
+        section {
+          font-family: $global-font-family;
+          font-size: $type-size-5;
+        }
+
+        h1 {
+          margin: 2em 0 !important;  /* override*/
+          padding: 1em;
+          color: $dark-gray;
+          font-family: $global-font-family;
+          font-size: $type-size-3 !important;
+          text-indent: initial; /* override*/
+          background-color: mix(#fff, grey, 90%);
+          border-radius: $border-radius;
+          box-shadow: 0 1px 1px rgba(grey, 0.25);
+        }
+        h2 {
+          margin: 1em 0 !important;  /* override*/
+          padding: 1em;
+          color: $dark-gray;
+          font-family: $global-font-family;
+          font-size: $type-size-4 !important;
+          text-indent: initial; /* override*/
+          background-color: mix(#fff, $light-gray, 90%);
+          border-radius: $border-radius;
+          box-shadow: 0 1px 1px rgba(grey, 0.25);
+        }
+        h3 {
+          margin: 1em 0 !important;  /* override*/
+          padding: 0.3em;
+          color: $dark-gray;
+          font-family: $global-font-family;
+          font-size: $type-size-4 !important;
+          text-indent: initial; /* override*/
+          background-color: mix(#fff, $light-gray, 90%);
+          border-radius: $border-radius;
+          box-shadow: 0 1px 1px rgba(grey, 0.25);
+        }
+        h4 {
+          margin: 1em 0 !important;  /* override*/
+          color: $dark-gray;
+          font-family: $global-font-family;
+          font-size: $type-size-4 !important;
+          text-indent: initial; /* override*/
+          background-color: mix(#fff, $light-gray, 90%);
+          border-radius: $border-radius;
+          box-shadow: 0 1px 1px rgba(grey, 0.25);
+        }
+
+
+}
