@@ -287,18 +287,22 @@ compress_html:
 
 # Defaults
 defaults:
+
   # _posts
   - scope:
-      path: ""
+      path: "_posts"
       type: posts
     values:
       layout: single
-      author_profile: true
+      header :
+        image: /assets/images/Mesange_color_clip1_ink5.png
+      author_profile: #true
       read_time: true
       comments: # true
       share: true
       related: true
-  # _ages
+      sidebar:
+        nav: "docs"
   - scope:
       path: "_pages"
       type: pages
