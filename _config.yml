@@ -303,12 +303,21 @@ defaults:
       related: true
       sidebar:
         nav: "docs"
+  # _pages
   - scope:
       path: "_pages"
       type: pages
     values:
       layout: single
-      author_profile: true
+      header :
+        image: /assets/images/Mesange_color_clip1_ink5.png
+      author_profile: #true
+      read_time: true
+      comments: # true
+      share: true
+      related: true
+      sidebar:
+        nav: "docs"
   # Home
   - scope:
       path: ""
