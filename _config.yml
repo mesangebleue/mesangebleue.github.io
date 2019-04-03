@@ -305,7 +305,18 @@ defaults:
     values:
       layout: single
       author_profile: true
+  # Home
+  - scope:
+      path: ""
+      type: home
+    values:
+      layout: single
+      header :
+        image: /assets/images/Mesange_color_clip1_ink5.png
+      author_profile: #true
       read_time: true
       comments: # true
       share: true
       related: true
+      sidebar:
+        nav: "docs"
