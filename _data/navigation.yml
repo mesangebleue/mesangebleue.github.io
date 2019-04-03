@@ -1,16 +1,15 @@
 # main links
 main:
-  - title: "About"
+  - title: "Moi"
     url: /CV/
   - title: "Blog"
-    url: /year-archive/
-  - title: "Infomatique"
-    url: /informatique"
+    url: /Blog/
+  - title: "Informatique"
+    url: /Informatique/
   - title: "Sport"
-    url: /sport/
-
+    url: /Sport/
   - title: "Voyages"
-      url: /voyages/
+    url: /Voyages/
 
 docs:
   - title : "OpenVSwitch CheatSheet"
