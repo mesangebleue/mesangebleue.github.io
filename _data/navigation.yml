@@ -16,3 +16,15 @@ docs:
     url: /OpenVSwitch_CheatSheet/
   - title : "Docker CheatSheet"
     url: /Docker_CheatSheet/
+
+cv_nav:
+  - title: "Comp&eacute;tences cl&eacute;s"
+    url: /CV/#competences-cles
+  - title: "Expériences professionnelles"
+    url: /CV/#experiences-professionnelles
+  - title: "Compétences"
+    url: /CV/#competences
+  - title: "Formation"
+    url: /CV/#formation
+  - title: "Centres d'intérêt"
+    url: /CV/#centres-d-interet
