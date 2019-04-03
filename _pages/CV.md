@@ -1,34 +1,44 @@
 ---
 layout: single
-classes: wide
+classes:
+    cv
+
 title: Curriculum Vitae
 permalink: /CV/
-toc: true
-header:
-  image: /assets/images/mesange1.jpeg
-
+sidebar:
+        nav: cv_nav
 ---
+
+
+| Télécharger : | [CV.pdf](#../assets/files/cv-FB-IngenieurDev-2018-fr_09122018_v1.pdf){: .btn .btn--primary} | [CV.doc](#../assets/files/cv-FB-IngenieurDev-2018-fr_09122018_v1.doc){: .btn .btn--primary} |
+{: .wide .cvmax}
+
+
+
+___
+
 Fabrice Belle
+
+41 ans
+
+Nationalité : Française
 
 Permis B
 
-40 ans
-Nationalité : Française
 Habilitations : Secret Défense, Secret NATO
 
 
 
 # Ingénieur de développement
-{: .notice--warning}
+
 
 Système et Cyber-Sécurité
 15 ans d'expérience
-{: .notice--info}
+
 
 ---
 
-## Compétences clés
-{: .notice--warning}
+## Compétences clés {#competences-cles}
 
  - Développement C, C++ en environnement Linux
  - Développement système (OS) et sécurité, virtualisation
@@ -44,8 +54,8 @@ Travail dans le domaine de la défense en environnement sécurisé, et dans le d
 
 
 
-## Expériences professionnelles
-{: .notice--warning}
+## Expériences professionnelles {#experiences-professionnelles}
+
 
 ### 05.2018 – 2018 : Guarani, en mission chez Til Technologies / Sorhea
 
@@ -103,8 +113,7 @@ Environnement :
  - méthode Scrum
 
 
-### 2002 – 2017: Ingénieur informatique chez Bertin Technologies – Conseil en Innovation Industrielle
-                        (département Sécurité des Systèmes d'Information)
+### 2002 – 2017: Ingénieur informatique chez Bertin Technologies – Conseil en Innovation Industrielle (département Sécurité des Systèmes d'Information)
 
 #### Décembre 2016 – 2017 : Ingénieur build et test sur le projet SHES
 
@@ -135,7 +144,7 @@ Filtre réseau sécurisé basé sur PolyXene
 
 #### 2005 – 2017  : Ingénieur de développement sur le projet PolyXène
 
- http://www.polyxene.fr/  Développement d'un Système d'exploitation sécurisé multi-niveaux
+ [http://www.polyxene.fr/](http://www.polyxene.fr/)  Développement d'un Système d'exploitation sécurisé multi-niveaux
 
 Activités :
  - Construction automatique de Linux embedded, BuildRoot
@@ -193,7 +202,7 @@ Planification automatique de mouvement dans un environnement 3D.
 
 Stage de maîtrise chez Bull (Grenoble).
 
-# Compétences
+# Compétences {#competences}
 
 ## Techniques :
 
@@ -230,7 +239,7 @@ Réseau : IP, TCP, UDP, HTTP, IPSec, IKE, DNS, DHCP, HTTPS, 802.1X
  - Espagnol  : notions
  - Chinois    : notions
 
-# Formation
+# Formation {#formation}
 
  - Formation « méthodes Agile » 2018
  - Formation « Développement sécurisé » 2018
@@ -255,7 +264,7 @@ Maîtrise d'Informatique, Université de Grenoble
 1998 - 1999 :
 Licence d'Informatique, Université de Grenoble
 
-# Centres d'intérêt
+# Centres d'intérêt {#centres-d-interet}
 
  - Sport de Combat, arts martiaux (Wing Tsun, Penchak Silat),
  - Voile,
