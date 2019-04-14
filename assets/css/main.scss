@@ -7,11 +7,11 @@
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
 
-
 body {
   font-family: $global-font-family;
-  font-size: $type-size-8;
+  font-size: $type-size-6;
 }
+
 
 .divider {
         background-color: white;
