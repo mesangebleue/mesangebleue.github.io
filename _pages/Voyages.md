@@ -22,5 +22,76 @@ permalink: /Voyages/
 
 </head>
 <body>
+ <table>
+ <thead>
+    <tr>
+        <th colspan="2">Liste des voyages</th>
+    </tr>
+</thead>
+<tbody>
+    <tr>
+        <td>Ete 2017</td>
+        <td>Grande ballade en Australie </td>
+    </tr>
+    <tr>
+        <td>Ete 2017</td>
+        <td>L'île de la Réunion </td>
+    </tr>
+    <tr>
+        <td>Ete 2017</td>
+        <td>Chine et Mongolie </td>
+    </tr>
+    <tr>
+        <td>Ete 2017</td>
+        <td>Berlin </td>
+    </tr>
+    <tr>
+        <td>Ete 2017</td>
+        <td>L'Espagne </td>
+    </tr>
+    <tr>
+        <td>Ete 2017</td>
+        <td>L'Italie, les 5 terres </td>
+    </tr>
+    <tr>
+        <td>Ete 2017</td>
+        <td>Singapour et Bali </td>
+    </tr>
+    <tr>
+        <td>Ete 2017</td>
+        <td>Hong-Kong, Vietnam et Chine </td>
+    </tr>
+    <tr>
+        <td>Ete 2017</td>
+        <td>Quebec et New-York </td>
+    </tr>
+    <tr>
+        <td>Ete 2017</td>
+        <td>La Guadeloupe </td>
+    </tr>
+    <tr>
+        <td>Ete 2017</td>
+        <td>Cophenague et Stockolm </td>
+    </tr>
+    <tr>
+        <td>Ete 2017</td>
+        <td>L'Argentine </td>
+    </tr>
+    <tr>
+        <td>Ete 2017</td>
+        <td>Chine </td>
+    </tr>
+    <tr>
+        <td>Ete 2017</td>
+        <td>Thailande et Cambodge </td>
+    </tr>
+    <tr>
+        <td>Ete 2017</td>
+        <td>Le tour de la Méditerranée </td>
+    </tr>
+</tbody>
+ </table>
+
+ <br/>
  <div id="mapid"></div>
 </body>
