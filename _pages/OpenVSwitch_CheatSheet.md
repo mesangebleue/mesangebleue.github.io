@@ -71,7 +71,8 @@ Les VLANs sont une implémentation de la norme 802.1Q. Les paquets réseaux, niv
 
 
 Une trame ethernet avec du 802.1q examinée à travers Wireshark, donnera ceci :
-__Image capture whireshrk__
+![capture wireshark](/assets/images/OpenVSwitch_CheatSheet/vlan_wireshark.png)
+
 
 ![table des macs](/assets/images/OpenVSwitch_CheatSheet/reseau_switch_vlan.png)
 
@@ -90,7 +91,7 @@ permettent de définir plusieurs réseaux indépendants.
 ## Premier exemple
 
 Disons que le switch de la figure précédente est joué par un ordinateur standard
-faisant tourné OpenVswitch et qu'il dispose de 10 ports réseaux physique (eth0-eth9).
+faisant tourner OpenVswitch et qu'il dispose de 10 ports réseaux physique (eth0-eth9).
 
 
 Pour créer le switch virtuel comme sur le dessin du dessus nous utiliserons la série
@@ -186,12 +187,24 @@ ovs-vsctl add-port br0 vlan1 tag=1200
 
 ## Le paramètre *type*
 
-Le type de l'interface peut prendre plusieurs valeurs (cf. [ovs-vswitchd.conf.db.5.pdf - page 22](http://www.openvswitch.org//ovs-vswitchd.conf.db.5.pdf).
+Le type de l'interface peut prendre plusieurs valeurs (cf. [ovs-vswitchd.conf.db.5.pdf - page 22](http://www.openvswitch.org//ovs-vswitchd.conf.db.5.pdf) ).
+
+Les types possibles sont :
+* system
+* internal
+* tap
+* geneve
+* gre
+* ipsec_gre
+* gre64
+* ipsec_gre64
+* vxlan
+* lisp
+* patch
 
 Une interface de type *internal* est un périphérique réseau virtuel qui peux envoyer
 et recevoir du traffic.
 
-Les autres types sont ???
 
 ## Le paramètre *vlan_mode*
 
@@ -255,8 +268,11 @@ et qu'il sera mis dans le VLAN indiqué par le paramètre *tag*. Le port taggera
 
 ```
 ovs-vsctl set port vnet0 tag=12
+ovs-vsctl set port vnet0 trunks=13
 ovs-vsctl set port vnet0 vlan_mode=native-tagged
 ```
+
+Le VLAN porté par **tag** sera mis automatiquement dans le **trunks**.
 
 ---
 
@@ -306,7 +322,7 @@ ovs-vsctl set port <eth0> trunks=3,4,5
 
 Supprimer un des VLANs du trunk
 ```
-ovs-vsctl set port <eth0> trunks=3,4,5
+ovs-vsctl set port <eth0> trunks=3,4
 ```
 
 
@@ -344,21 +360,29 @@ Pour tracer les elements dans OVS
 
 # Configurer un switch OpenVswitch au démarrage
 
-Il peut être utile de ????
+Au démarrage de la machine, OpenVswitch (la partie server ovsdb-server), va se lancer
+et restaurer la configuration entrée auparavant.
+Il peut toutefois être utile d'entrer cette configuration via le fichier **/etc/netwoking/interfaces**.
+Cette option permettra notamment de configurer la partie IP des interfaces, ce que ne permet pas OpenVswitch.
+
+Voici un exemple de création d'un bridge *ovs_switch* ayant 2 port *internal* portant les VLANs 2381 et 2900.
 
 ```
 ...
-allow-ovs_switch BOX_NB300
-iface BOX_NB300 inet static
+allow-ovs ovs_switch
+iface ovs_switch inet manual
+    ovs_type OVSBridge
+
+allow-ovs_switch VLAN_2381
+iface VLAN_2381 inet static
     ovs_bridge ovs_switch
     ovs_type OVSIntPort
     ovs_options tag=2381
     address 192.168.1.100
     netmask 255.255.255.0
 
-
-allow-ovs_switch WAN_2900
-iface WAN_2900 inet manual
+allow-ovs_switch VLAN_2900
+iface VLAN_2900 inet manual
     ovs_bridge ovs_switch
     ovs_type OVSIntPort
     ovs_options tag=2900
@@ -374,6 +398,8 @@ iface WAN_2900 inet manual
 
 [https://fr.wikipedia.org/wiki/IEEE_802.1Q](https://fr.wikipedia.org/wiki/IEEE_802.1Q)
 
+[http://docs.openvswitch.org/en/latest/](http://docs.openvswitch.org/en/latest/)
+
 [http://www.openvswitch.org/support/dist-docs-2.5/tutorial/Tutorial.md.txt](http://www.openvswitch.org/support/dist-docs-2.5/tutorial/Tutorial.md.txt)
 
 [https://www.lecoindunet.com/comprendre-notion-vlan-tagged-untagged-1629](https://www.lecoindunet.com/comprendre-notion-vlan-tagged-untagged-1629)
@@ -381,3 +407,5 @@ iface WAN_2900 inet manual
 [https://vincent.bernat.ch/fr/blog/2017-linux-bridge-isolation](https://vincent.bernat.ch/fr/blog/2017-linux-bridge-isolation)
 
 [http://www.openvswitch.org/support/dist-docs/ovs-vswitchd.conf.db.5.pdf](http://www.openvswitch.org/support/dist-docs/ovs-vswitchd.conf.db.5.pdf page 23)
+
+[https://blog.scottlowe.org/tags/ovs/](https://blog.scottlowe.org/tags/ovs/)
