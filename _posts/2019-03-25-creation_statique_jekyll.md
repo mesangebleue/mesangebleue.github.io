@@ -5,7 +5,6 @@ title: Creation d'un site statique avec Jekyll - Minimal-mistakes
 permalink: creation_statique_jekyll
 excerpt: "Creation d'un site statique avec Jekyll - Minimal-mistakes et GitHubPages"
 header:
-  image: assets/images/jekyll-logo-2x.png
   teaser: assets/images/jekyll-logo-2x.png
 toc: true
 toc_sticky: true
@@ -29,7 +28,7 @@ de base de donnée, ce qui évite de potentiel problème (injection de requête 
 et une certaine lourdeur.
 Bien sur Jekyll a un potentiel moindre qu'un Wordpress, mais il est parfait pour
 un petit site de Blog voir pour faire des sites professionels plus conséquents (
-        https://jekyllrb.com/showcase/
+        [https://jekyllrb.com/showcase/](https://jekyllrb.com/showcase/)
         )
 
 
@@ -47,6 +46,11 @@ Donc, pour faire vite :
 et voilà, on se retrouve avec un site (que l'on peut facilement faire héberger,
 sur GitHub Pages entre autre).
 
+*Schema*
+
+Bon, on obtient un site, facilement éditable mais pas super funky, surement pas ce
+que vous vous imaginiez. Il faut donc configurer un peu les choses. Pour cela
+il va falloir comprendre un minimum du fonctionnement de Jekyll.
 
 # Installation
 
@@ -54,9 +58,9 @@ Installation des packages Jekyll fourni par Ubuntu.
 
 Le package installera la quasi totalité des fichiers dans */usr/lib/ruby/vendor_ruby/jekyll*
 
-https://github.com/jekyll/jekyll
+[https://github.com/jekyll/jekyll](https://github.com/jekyll/jekyll)
 
-# Qu'est ce ca fait
+# Structure et fonctionnement
 
 Un site Jekyll, quand vous travaillez dessus se présente avec une structure définie.
 
@@ -84,7 +88,7 @@ Un site Jekyll, quand vous travaillez dessus se présente avec une structure dé
 └── index.html # can also be an 'index.md' with valid front matter
 ```
 
-https://jekyllrb.com/docs/structure/
+[https://jekyllrb.com/docs/structure/](https://jekyllrb.com/docs/structure/)
 
 Pour obtenir cette arborescence il suffira d'utiliser la commande
 
@@ -114,7 +118,7 @@ Facile, mais comment faire un peu plus ? Comment changer l'aspect d'un site ?
 Tout d'abord, il est possible de changer de thème.
 
 Pour plus de détails sur le fonctionnement interne de Jekyll, consultez :
-https://www.bytesandwich.com/jekyll/software/blogging/2016/09/14/how-does-jekyll-work.html
+(https://www.bytesandwich.com/jekyll/software/blogging/2016/09/14/how-does-jekyll-work.html)[https://www.bytesandwich.com/jekyll/software/blogging/2016/09/14/how-does-jekyll-work.html]
 
 Pour résumer :
 - on regarde tout les fichiers rencontrés dans le répertoire de travail
@@ -178,7 +182,7 @@ Il existe bien sur un grand nombre d'autres thèmes.
 
 J'ai choisi le thème *minimal-mistakes*.
 
-https://mmistakes.github.io/minimal-mistakes/docs/installation/
+[https://mmistakes.github.io/minimal-mistakes/docs/installation/](https://mmistakes.github.io/minimal-mistakes/docs/installation/)
 
 
 
@@ -187,37 +191,97 @@ https://mmistakes.github.io/minimal-mistakes/docs/installation/
 La configuration du thème, comme du site Jekyll en général se fait par l'intermédiaire
 du fichier de configuration *\_config.yml*
 
-https://mmistakes.github.io/minimal-mistakes/docs/configuration/
+[https://mmistakes.github.io/minimal-mistakes/docs/configuration/](https://mmistakes.github.io/minimal-mistakes/docs/configuration/)
 
 
 
 
-# Mon organisation
+# Navigation
 
-Je veux le maximum de largeur pour mes articles.
 
-Je veux un accès facile par un menu à quelques pages de récapitulatif sur la gauche
+Ces explications s'applique uniquement au thème *Minimal Mistake*.
 
-Je veux un menu en haut avec des liens vers des pages ou des collections d'articles.
-La majorité des articles seront probablement sur l'informatique mais il faut aussi des pages
-sur le voyages et sur d'autres passions.
+Je voulais un site avec une barre de menu en haut et des liens vers quelques pages
+sur le coté gauche. Ces éléments doivent bien sur rester présent sur toutes
+les pages.
 
-Le menu, \_data/navigation.yml
-
-# Configurer les fontes
-
-# Changer une chaine de caractère
+La configuration des menus est réalisée dans le fichier *\_data/navigation.yml*
 
 
 
 
-# Configuration du footer
+# Utilisation de GitHub-pages
 
-\_includes/footer.html
+Il est possible d'héberger gratuitement son site Jekyll sur différentes plateformes.
 
-# Ajout d'un favicon
+La plus connue étant GitHub.
 
-\_includes/head/custom.html
+Pour cela il suffit de se créer un compte GitHub et de pusher son Jekyll sur
+
+*https://github.com/{$USER_NAME}/{$USER_NAME}.github.io*
+
+[https://jekyllrb.com/docs/github-pages/](https://jekyllrb.com/docs/github-pages/)
+
+# Le SEO
+
+
+# Le SiteMap
+
+Un fichier SiteMap sert à mieux communiquer avec les moteurs de recherches sur le
+contenu du site et ainsi être mieux référencé.
+
+Il existe un plugin Jekyll qui fera tout le travail.
+Ce plugin est en principe inclu dans le thème *Minimal Mistake*.
+
+[https://blog.webjeda.com/jekyll-sitemap/](https://blog.webjeda.com/jekyll-sitemap/)
+
+# Toutes les balises YAML FrontMatter pour Minimal-mistakes
+
+
+- layout
+- title
+- canonical_url: "https://yoursite.com/custom-canonical-url"
+- classes
+- overview : ?
+- toc
+- toc_label: "My Table of Contents"
+- toc_icon: "cog"
+- excerpt: "A unique line of text to describe this post that will display in an archive listing and meta description with SEO benefits."
+- permalink: /portfolio/
+- collection: portfolio
+- entries_layout: grid
+- header:
+- header.teaser: path-to-teaser-image.jpg
+- author_profile: true
+- read_time: true
+- comments: true
+- share: true
+- related: true
+- collections:
+- collections.portfolio:
+- collections.output: true
+- collections.permalink: /:collection/:path/
+- author: Billy Rick
+- sitemap:
+
+# Différentes recettes
+
+## Changer une chaine de caractère internationalisée
+
+Certaines chaînes de caractères sont internationalisées la traduction à prendre
+en compte, suivant la langue configurée dans le *_config.yml* se trouve dans le
+fichier *_data/ui-text.yml*.
+
+
+## Configuration du footer
+
+Pour configurer les éléments récurrents comme le footer (ou le header), il suffit
+de modifier le fichier correspondant dans le répertoire *_includes/*, par exemple :
+*\_includes/footer.html*.
+
+## Ajout d'un favicon
+
+*\_includes/head/custom.html*
 ```
  <!-- start custom head snippets -->
 
@@ -230,104 +294,100 @@ Le menu, \_data/navigation.yml
 
 rel attribute has to have value "icon".
 
-# Utilisation de GitHub-pages
 
+## Mettre des images teaser pour les articles
 
-# Le SEO
+Pour le thème *Minimal mistake* il suffit d'utiliser dans le Front Matter
+la balise header.teaser
 
-# Le SiteMap
-
-Plugin jekyll
-
-# Toutes les balises YAML FrontMatter pour Minimal-mistakes
-
-
-layout: single
-title: Title of Your Post
-canonical_url: "https://yoursite.com/custom-canonical-url"
-
-
----
-layout: splash
-classes:
-  - landing
-  - dark-theme
----
-
----
-toc: true
-toc_label: "My Table of Contents"
-toc_icon: "cog"
----
-
-
-excerpt: "A unique line of text to describe this post that will display in an archive listing and meta description with SEO benefits."
-
----
-title: Portfolio
-layout: collection
-permalink: /portfolio/
-collection: portfolio
-entries_layout: grid
----
-
+```
 header:
-  teaser: path-to-teaser-image.jpg
+        teaser: path_image
+```
 
+## Changer le CSS pour une page en particulier
 
-  defaults:
-    # _posts
-    - scope:
-        path: ""
-        type: posts
-      values:
-        layout: single
-        author_profile: true
-        read_time: true
-        comments: true
-        share: true
-        related: true
+Une possibilité est de créer de nouvelles entrées dans le CSS et de les utiliser ensuite
+dans la page avec la balise *Front Matter* classes.
 
+Exemple, dans *assets/css/main.scss* on ajoute
+```
+new_style {
 
-        collections:
-          portfolio:
-            output: true
-            permalink: /:collection/:path/
+        section {
+          font-family: $global-font-family;
+          font-size: $type-size-5;
+        }
 
-            author: Billy Rick
+        h1 {
+  ...
+}
+```
 
-__
+et dans la page xxx.md on ajoute dans le *Front Matter*
+```
+---
+...
+classes:
+    new_style
+...
+---
 
-# Mettre une image de header pas trop Grande
+```
 
-# Mettre des images teaser pour les articles
+## Changer le menu principal
 
-# Changer le CSS pour une page en particlier
+Les menus de navigation sont définis dans *_data/navigation.yml*.
+Il suffit d'editer ce fichier.
 
-# Changer le menu principal
+## Changer la taille de la fonte
 
-# Changer la taille de la fonte
+Le mieux est probablement de changer le CSS associé à l'élément.
 
-# Faire un menu avec des liens dans la page
+Pour un changement global, modifier *assets/css/mains.scss* :
 
-# Mettre des id sur les titre avec kramdown
+```
+body {
+  font-family: $global-font-family;
+-  font-size: $type-size-8;
++  font-size: $type-size-6;
+}
+```
 
+## Faire un menu avec des liens dans la page
 
-# Ajouter des favicon
+Pour mettre un id html sur un élément, un titre par exemple, il faut rajouter
+```
+{#nom_id}
+```
+derrière le titre.
+Par exemple :
+```
+## Compétences clés {#competences-cles}
+```
+Ceci permet par exemple de faire un menu de navigation avec des liens pointant
+vers des éléments internes à la page en Kramdown.
 
-# Ajouter un sitemap
+## Utiliser du HTML dans un fichier .md
 
+Pourquoi ?
+
+Comment ?
 
 # Liens
 
 [https://jekyllrb.com/](https://jekyllrb.com/)
 
-http://jekyllbootstrap.com/
+[http://jekyllbootstrap.com/](http://jekyllbootstrap.com/)
 
-https://mmistakes.github.io
+[https://mmistakes.github.io](https://mmistakes.github.io)
 
-https://www.smashingmagazine.com/2014/08/build-blog-jekyll-github-pages/
+[https://www.smashingmagazine.com/2014/08/build-blog-jekyll-github-pages/](https://www.smashingmagazine.com/2014/08/build-blog-jekyll-github-pages/)
 
-https://www.taniarascia.com/make-a-static-website-with-jekyll/
+[https://www.taniarascia.com/make-a-static-website-with-jekyll/](https://www.taniarascia.com/make-a-static-website-with-jekyll/)
 
-http://jmcglone.com/guides/github-pages/
+[http://jmcglone.com/guides/github-pages/](http://jmcglone.com/guides/github-pages/)
+
+Le code du site jekyllrb.com : [https://github.com/jekyll/jekyll/tree/master/docs](https://github.com/jekyll/jekyll/tree/master/docs)
+
+Conférence sur Jekyll : [http://jekyllconf.com/](http://jekyllconf.com/)
