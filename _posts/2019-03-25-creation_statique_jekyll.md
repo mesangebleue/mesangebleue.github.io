@@ -111,7 +111,11 @@ jekyll build
 ```
 produira votre site dans le répertoire *\_site*.
 
-
+Si vous voulez tester vore site web en local il suffit d'utiliser la commande :
+```
+bundle exec jekyll serve
+```
+Vore site devrait être accessible en *http://127.0.0.1:4000* comme dit dans le massage de sortie de cette commande.
 
 
 Facile, mais comment faire un peu plus ? Comment changer l'aspect d'un site ?
@@ -373,6 +377,16 @@ vers des éléments internes à la page en Kramdown.
 Pourquoi ?
 
 Comment ?
+
+## Mise à jour de version du Host
+
+Lors de la mise à jour de ma version de Ubuntu à 20.04, j'ai du réaliser les commandes suivantes :
+- *sudo gem install bundler* : pour metter à jour le script *bundler* qui esasyait d'utiliser une version ruby2.3 alors le host était passé en 2.5
+- dans mon répertoire Kekyll, *sudo bundle install* pour une mise à jour de Jekyll et des plugins
+
+Pour plus d'informations sur l'installation et l'utilsiation d'un Gemfile :
+- https://jekyllrb.com/docs/ruby-101/#gems
+- https://jekyllrb.com/docs/installation/
 
 # Liens
 
