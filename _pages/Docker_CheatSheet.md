@@ -69,10 +69,10 @@ Les commandes ```docker container run``` et ```docker run``` sont les même.
 Le **Dockerfile** est un moyen de donner les paramètres qui seront utilisés par le container à son lancement.
 
 
-# Dockerfile
+# Dockerfile
 
 Il permet de créer une image, assembler une image de base et donner quelques commandes
-supplémentaires pour en faire une nouvelle. Le Dockerfile permet également de définir
+supplémentaires pour en faire une nouvelle. Le *Dockerfile* permet également de définir
 certains paramètres qui seront utilisés au lancement du container.
 
 ```
@@ -124,7 +124,7 @@ $ docker run --tty --interactive debian:7
 
 Vous devriez être dans un magnifique container avec un bash prêt à répondre. Vous remarquerez le temps de lancement est assez faible. Mais qu'avons-nous fait ? Détaillons ce qu'elle veut dire :
 
- -    L'option --tty permet d'attacher la console à notre console actuelle et de ne pas perdre le focus. C'est grâce à cette option que votre container ne va pas se terminer.
+ -  L'option --tty permet d'attacher la console à notre console actuelle et de ne pas perdre le focus. C'est grâce à cette option que votre container ne va pas se terminer.
  -  L'option --interactive vous permet de dialoguer avec votre container. Sans cette option, tout ce que vous taperez dans votre console ne sera pas transmis au bash du container.
 
 Il faut que le Dockerfile ait déclaré *CMD=/bin/bash*.
@@ -148,7 +148,7 @@ adf7036dccfb        colisanr/morbig:latest             "/home/opam/morbig/b…" 
 dde5b1d3a906        hello-world                        "/hello"                 14 months ago       Exited (0) 14 months ago                                                    confident_bassi
 4ab194a1bd61        buildroot   "/bin/bash -e /start…"   14 months ago       Exited (0) 14 months ago                                                    unruffled_rosali
 ```
-Avec le *-a* on obitient toutes les containers existant, même ceux qui en sont pas UP.
+Avec le *-a* on obtient toutes les containers existant, même ceux qui en sont pas UP.
 
 ## Lister les images
 
@@ -179,9 +179,9 @@ Avec l'option *-a* on obtient les images intermédiaires. Information que l'on p
 ```
 docker image history NomImage
 ```
+.
 
-
-## docker run
+## docker run
 
 Fait
 ```
@@ -202,9 +202,9 @@ Attention si je refait un *docker run*, je refais un *create* et donc j'ai plusi
 
 C'est le dépôt des images de bases.
 
-Celui par défaut et le Docker-Hub(https://hub.docker.com/) mais il est tout a fait possible d'en avoir un a soi.
+Celui par défaut et le Docker-Hub([https://hub.docker.com/]()) mais il est tout a fait possible d'en avoir un a soi.
 
-D'après https://docs.docker.com/registry/ :
+D'après [https://docs.docker.com/registry/]() :
    The Registry is a stateless, highly scalable server side application that stores and lets you distribute Docker images.
 
    A registry is a storage and content delivery system, holding named Docker images, available in different tagged versions.
@@ -216,11 +216,10 @@ Pour s'en créer un perso faire :
 ```
 $ docker run -d -p 5000:5000 --name registry registry:2
 ```
+
 # Le stockages des images en local
 
-
 Sur Ubuntu
-
 
 ```
 $ docker info
@@ -229,24 +228,36 @@ $ docker info
 permet de voir que **Docker Root Dir: /var/lib/docker**
 
 
-La page https://www.freecodecamp.org/news/where-are-docker-images-stored-docker-container-paths-explained/
+La page [https://www.freecodecamp.org/news/where-are-docker-images-stored-docker-container-paths-explained/]()
 explicite un peu l'organisation des fichiers de Docker.
 
 Pour les images, on procède par une image mère puis des overlay. Le tout es contenu dans **/var/lib/docker/overlay2**.
 
 # Docker et le réseau
 
+
 ## Passer un port
 
 ```
 -p 8888:5000
 ```
+.
 
-## Les Bridge Docker
 
-## Commande docker network
+## Les Bridge Docker
 
-## Docker de DPDK
+**TODO**
+.
+
+
+## Commande docker network
+
+
+**TODO**
+.
+
+
+## Docker de DPDK
 
 Il semble possible d'utiliser DPDK.
 
@@ -257,16 +268,18 @@ Par exemple :
 ```
 docker run -it --privileged -v /sys/bus/pci/drivers:/sys/bus/pci/drivers -v /sys/kernel/mm/hugepages:/sys/kernel/mm/hugepages -v /sys/devices/system/node:/sys/devices/system/node -v /dev:/dev --name NAME -e NAME=NAME -e IMAGE=IMAGE IMAGE"
 ```
-prise dans https://github.com/jeremyeder/docker-dpdk/blob/master/Dockerfile
+prise dans [https://github.com/jeremyeder/docker-dpdk/blob/master/Dockerfile]()
 
-# questions
+
+
+# Questions
 
 Les accès réseaux possibles
 
 Les accès aux périphériques ???
-https://stackoverflow.com/questions/24225647/docker-a-way-to-give-access-to-a-host-usb-or-serial-device
-https://subscription.packtpub.com/book/virtualization_and_cloud/9781783984862/2/ch02lvl1sec28/accessing-the-host-device-inside-the-container
-https://www.losant.com/blog/how-to-access-serial-devices-in-docker
+- [https://stackoverflow.com/questions/24225647/docker-a-way-to-give-access-to-a-host-usb-or-serial-device]()
+- [https://subscription.packtpub.com/book/virtualization_and_cloud/9781783984862/2/ch02lvl1sec28/accessing-the-host-device-inside-the-container]()
+- [https://www.losant.com/blog/how-to-access-serial-devices-in-docker]()
 
 On lance quoi qd on lance un docker ?
 
@@ -274,25 +287,26 @@ Docker et LXC ?
 
 # Liens
 
-https://www.wanadev.fr/24-tuto-docker-demarrer-docker-partie-2/ (+++)
-https://docker-curriculum.com/  (+++)
-https://www.smartwavesa.com/blog-articles/les-tutos-docker-episode-1/
-https://docs.docker.com/get-started
-https://docs.docker.com/engine/reference/commandline/docker/
+- [https://www.wanadev.fr/24-tuto-docker-demarrer-docker-partie-2/]() (+++)
+- [https://docker-curriculum.com/]()  (+++)
+- [https://www.smartwavesa.com/blog-articles/les-tutos-docker-episode-1/]()
+- [https://docs.docker.com/get-started]()
+- [https://docs.docker.com/engine/reference/commandline/docker/]()
 
-https://journaldunadminlinux.fr/tuto-docker-demarrer-avec-docker/
+[https://journaldunadminlinux.fr/tuto-docker-demarrer-avec-docker/]()
 
 Faire son propre registry :
-- https://docs.docker.com/registry/deploying/
-- https://hackernoon.com/create-a-private-local-docker-registry-5c79ce912620
+- [https://docs.docker.com/registry/deploying/]()
+- [https://hackernoon.com/create-a-private-local-docker-registry-5c79ce912620]()
 
 
 
-https://journaldunadminlinux.fr/tuto-docker-demarrer-avec-docker/
+[https://journaldunadminlinux.fr/tuto-docker-demarrer-avec-docker/]()
 
 
-https://developers.redhat.com/blog/2015/06/02/can-you-run-intels-data-plane-development-kit-dpdk-in-a-docker-container-yep/
-https://software.intel.com/en-us/articles/using-docker-containers-with-open-vswitch-and-dpdk-on-ubuntu-1710
+[https://developers.redhat.com/blog/2015/06/02/can-you-run-intels-data-plane-development-kit-dpdk-in-a-docker-container-yep/]()
+
+[https://software.intel.com/en-us/articles/using-docker-containers-with-open-vswitch-and-dpdk-on-ubuntu-1710]()
 
 
-https://stackoverflow.com/questions/24225647/docker-a-way-to-give-access-to-a-host-usb-or-serial-device
+[https://stackoverflow.com/questions/24225647/docker-a-way-to-give-access-to-a-host-usb-or-serial-device]()
