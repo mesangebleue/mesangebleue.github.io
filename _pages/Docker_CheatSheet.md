@@ -233,6 +233,11 @@ explicite un peu l'organisation des fichiers de Docker.
 
 Pour les images, on procède par une image mère puis des overlay. Le tout es contenu dans **/var/lib/docker/overlay2**.
 
+La page [https://dev.to/napicella/how-are-docker-images-built-a-look-into-the-linux-overlay-file-systems-and-the-oci-specification-175n]()
+explique le principe d'un OverlayFS et parle, un peu, des Images Docker.
+
+Les Open Container Initiative (OCI) defintions des Images et Containers.
+
 # Docker et le réseau
 
 
