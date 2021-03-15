@@ -10,7 +10,7 @@ sidebar:
 ---
 
 
-| Télécharger : | [CV.pdf](#../assets/files/cv-FB-IngenieurDev-2018-fr_09122018_v1.pdf){: .btn .btn--primary} | [CV.doc](#../assets/files/cv-FB-IngenieurDev-2018-fr_09122018_v1.doc){: .btn .btn--primary} |
+| Télécharger : | [CV.pdf](../assets/files/cv-FB-IngenieurDev-2018-fr_09122018_v1.pdf){: .btn .btn--primary} | [CV.doc](../assets/files/cv-FB-IngenieurDev-2018-fr_09122018_v1.doc){: .btn .btn--primary} |
 {: .wide .cvmax}
 
 
