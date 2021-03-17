@@ -10,7 +10,7 @@ sidebar:
 ---
 
 
-| Télécharger : | [CV.pdf](../assets/files/cv-FB-IngenieurDev-2018-fr_09122018_v1.pdf){: .btn .btn--primary} | [CV.doc](../assets/files/cv-FB-IngenieurDev-2018-fr_09122018_v1.doc){: .btn .btn--primary} |
+| Télécharger : | [CV.pdf]({% link /assets/files/cv-FB-IngenieurDev-2020-fr_12102020_v1.pdf %}){: .btn .btn--primary} | [CV.doc]({% link /assets/files/cv-FB-IngenieurDev-2020-fr_12102020_v1.doc %}){: .btn .btn--primary} |
 {: .wide .cvmax}
 
 
@@ -19,7 +19,7 @@ ___
 
 Fabrice Belle
 
-41 ans
+42 ans
 
 Nationalité : Française
 
@@ -43,6 +43,7 @@ Système et Cyber-Sécurité
  - Développement C, C++ en environnement Linux
  - Développement système (OS) et sécurité, virtualisation
  - Développement environnement embarqué, bootloader (Uboot), OpenWRT
+ - Développement réseau, box internet, xDSL, GPON, XGSPON
  - Développement Système, bas niveau dans OS temps réel
  - Développement embarqué IMX7, freeRTOS
  - Développement Linux ( driver, Xen,  applicatif Qt5)
@@ -56,8 +57,20 @@ Travail dans le domaine de la défense en environnement sécurisé, et dans le d
 
 ## Expériences professionnelles {#experiences-professionnelles}
 
+### 02.2019 – 2020 : Guarani en mission chez SFR
 
-### 05.2018 – 2018 : Guarani, en mission chez Til Technologies / Sorhea
+Adaptation des box internet pour les entreprises.
+Dévelopement sous OpenWRT, QOS, PoC avec DPDK/VPP
+
+Activités :
+- Adaptation de box avec un nouveau framwork de dév sur OpenWRT
+- Sécurisation de la Box
+- Adaptation de Box XDSL
+- Adaptation de Box GPON (Fibre 1Gb) et XGSPON (Fibre 10Gb)
+- Différents PoC (Proof of Concept) sur UCPE (Universal CPE), accélération de paquets par logiciels avec DPDK/VPP
+- Développement C / script Bash / Python
+
+### 05.2018 – 02.2019 : Guarani, en mission chez Til Technologies / Sorhea
 
 Sécurisation d’une plateforme de contrôle d’intrusion sur carte embarquée chez Sorhea.
 
@@ -253,6 +266,8 @@ Réseau : IP, TCP, UDP, HTTP, IPSec, IKE, DNS, DHCP, HTTPS, 802.1X
     - AI for Robotics (2012- Udacity)
     - Image and video processing: From Mars to Hollywood with a stop at the hospital (2013 – Coursera)
     - Machine Learning (Coursera)
+    - Build Basic GAN , Getting start with TensorFlow 2 (Coursera 2020)
+    - Comprendre le cœur d’internet : les réseaux d’opérateurs, Les réseaux FTTH (funmooc 2020)
 
 2000 - 2001 :
 DESS IRR(Intelligence Artificielle, Reconnaissance des formes et Robotique)
