@@ -15,6 +15,8 @@ docs:
     url: /OpenVSwitch_CheatSheet/
   - title : "Docker CheatSheet"
     url: /Docker_CheatSheet/
+  - title : "Iptables CheatSheet"
+    url: /Iptables_CheatSheet/
 
 cv_nav:
   - title: "Comp&eacute;tences cl&eacute;s"

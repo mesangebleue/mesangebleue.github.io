@@ -2,7 +2,7 @@
 title:  "IPtables Cheatsheet"
 layout: single
 classes: wide
-permalink: /IPtables_CheatSheet/
+permalink: /Iptables_CheatSheet/
 ---
 
 # Introduction
@@ -69,18 +69,15 @@ Ainsi, par exemple, la machine faisant du NAT peut recevoir des paquets d'une
 pour pour pouvoir faire le transfert en sens inverse des réponses de
  192.168.0.1 à 10.0.0.1.
 
-
 [schema_NAT_1:schema_NAT_1.png]
 
 Le NAT peut être :
-
 - un NAT statique, où on donne une correspondance entre une adresse du LAN et
 une adresse du WAN, on pourra accéder à la machine du LAN depuis le WAN.
 - un NAT dynamique, où on donne une adresse IP et un réseau privé, l'adresse
 IP sera l'adresse publique permettant d'accéder au sous réseau privé.
 - une redirection port, on donne un port sur l'adresse IP WAN et on redirige
 le flux vers un port d'une adresse IP du LAN.
-
 
 ## NAT statique
 
@@ -89,9 +86,7 @@ La configuration du NAT statique va se retrouver dans la table NAT de IPtable.
 La règle iptable utilise la commande DNAT (Destination NAT) qui permet de changer
 l'adresse Destination du paquet reçu par l'adresse de la machine cible.
 
-
-## Le NAT dynamique
-
+## NAT dynamique
 
 Le NAT dynamique permet à un ensemble de PC du coté LAN de sortir du coté WAN
  en utilisant une seule adresse IP externe.
@@ -112,7 +107,6 @@ Dans le cas où on ne spécifie par l'adresse de sortie on utilise une règle IP
  dans la table NAT avec la commande MASQUERADE.
 Dans ce cas, on prendra l'adresse IP de l'interface publique comme adresse de sortie.
 
-
 ## Les helpers
 
 Certains protocoles (dont ftp, tftp et irc) ont besoin de modules supplémentaires
@@ -131,7 +125,7 @@ La conntrack est indispensable à l'implémentation du NAT.
 
 ## Commandes de conntrack
 
-Lister le contenu de la conntrack
+Lister le contenu de la conntrack :
 ```
 # conntrack -L
 ```
