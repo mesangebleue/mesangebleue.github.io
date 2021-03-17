@@ -1,5 +1,14 @@
-
-# Cours sur ROS2 - Introduction
+---
+layout: single
+classes: wide
+title: Cours sur ROS2 - Introduction
+permalink: ros2_introduction
+excerpt: "Cours sur ROS2 - Introduction"
+header:
+  teaser: assets/images/rosorg-logo1.png
+toc: true
+toc_sticky: true
+---
 
 # Avis sur le cours de  Coursera
 
