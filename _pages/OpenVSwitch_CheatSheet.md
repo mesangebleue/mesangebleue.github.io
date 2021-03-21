@@ -16,7 +16,7 @@ Nous ne parlerons ici que du niveau 2.
  Il intervient au niveau 2 de la couche OSI.
 Ce qui correspond généralement à la couche Ethernet.
 
-Une de ses fonctionnalités est de pouvoir créer des ports qui apparaitront
+Une de ses fonctionnalités est de pouvoir créer des ports qui apparaîtront
 dans le système comme des interfaces réseaux ou bien de lui attribuer une interface
 réseau réelle comme port.
 
@@ -46,13 +46,13 @@ Les VLANs (Virtual Local Area Network) permettent de catégoriser des paquets r�
 pour en séparer les flux. Ainsi sur un réseau d'entreprise il peut y avoir un
 VLAN Bureautique, un VLAN développeur et un VLAN public.
 La configuration des différents switchs du réseau de l'entreprise permettra par exemple
-de ne faire sortir les flux developpeur que vers des prises ethernet se trouvant physiquement
+de ne faire sortir les flux développeur que vers des prises Ethernet se trouvant physiquement
 dans les salles réservées à cette catégorie de personnel.
 
 
 
 Les VLANs sont une implémentation de la norme 802.1Q. Les paquets réseaux, niveau
-2, donc Ehernet dans notre cas, vont se voir ajouter une information supplémentaire.
+2, donc Ethernet dans notre cas, vont se voir ajouter une information supplémentaire.
 
 
 
@@ -70,7 +70,7 @@ Les VLANs sont une implémentation de la norme 802.1Q. Les paquets réseaux, niv
 </td></tr></table>
 
 
-Une trame ethernet avec du 802.1q examinée à travers Wireshark, donnera ceci :
+Une trame Ethernet avec du 802.1q examinée à travers Wireshark, donnera ceci :
 ![capture wireshark](/assets/images/OpenVSwitch_CheatSheet/vlan_wireshark.png)
 
 
@@ -141,7 +141,7 @@ ovs-vsctl add-port br0 vlan3 tag=3 -- set interface vlan3 type=internal
 ovs-vsctl add-port br0 eth0 -- set port eth0 trunks=1,2,3
 ```
 
-Ces commandes feront apparaitre 3 nouvelles interfaces sur le système.
+Ces commandes feront apparaître 3 nouvelles interfaces sur le système.
 ```
 $ip link
 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1
@@ -162,7 +162,7 @@ Les interfaces vlan1,vlan2 et vlan3 peuvent être vues comme des interfaces TAP 
 OpenVswitch. C'est le paramètre *type=internal* qui a permis cette création.
 
 Pour accéder aux machines sur les différents VLANs, il suffira de configurer une adresse
-pour chaqune de ces interfaces. Par exemple avec la suite de ocmmande :
+pour chacune de ces interfaces. Par exemple avec la suite de commande :
 ```
 $ifconfig vlan1 192.168.100.66
 $ifconfig vlan2 192.168.101.66
@@ -203,7 +203,7 @@ Les types possibles sont :
 * patch
 
 Une interface de type *internal* est un périphérique réseau virtuel qui peux envoyer
-et recevoir du traffic.
+et recevoir du trafic.
 
 
 ## Le paramètre *vlan_mode*
@@ -230,7 +230,7 @@ des paquets réseaux sans header 802.1Q.
 ![port en mode access](/assets/images/OpenVSwitch_CheatSheet/reseau_switch_vlan_access.png)
 
 Dans cet exemple le PC est relié à un port en *access tag=12*. Le PC n'a pas de notion de VLAN, il
-recoit et emet des paquets sans header 802.1q donc dans aucun VLAN.
+reçoit et émet des paquets sans header 802.1q donc dans aucun VLAN.
 Le switch va prendre les paquets venant du PC et leur ajouter un header 802.1Q(12),
 le mettant ainsi dans le VLAN 12.
 Il fera l'opération inverse pour les paquets à destination du PC (suppression du header 802.1q).
@@ -247,7 +247,7 @@ ovs-vsctl add-port br0 vlan12 tag=12 -- set interface vlan12 type=internal vlan_
 
 ---
 
-Le paramètre **trunk** permets de définir un ensemble de VLAN, le port accèptera
+Le paramètre **trunk** permets de définir un ensemble de VLAN, le port acceptera
 tout les paquets de cet ensemble de VLAN.
 
 ![port en mode trunk](/assets/images/OpenVSwitch_CheatSheet/reseau_switch_vlan_trunk.png)
