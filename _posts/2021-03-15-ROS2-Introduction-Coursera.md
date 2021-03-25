@@ -136,3 +136,53 @@ ceci va créer automatiquement un répertoire sources avec certains fichiers pr�
         └── test_pep257.py
 
 ```
+
+
+## Code de l'exemple
+
+Code de l'exemple du cours
+
+*/ws/src/obj_detection/setup.cfg*
+
+```python
+import rclpy
+from rclpy.node import Node
+
+from sensor_msgs.msg import Image
+import cvlib as cv
+from cvlib.object_detection import draw_bbox
+from cv_bridge import CvBridge
+import time
+
+
+class DetectorNode(Node):
+    def __init__(self):
+        super().__init__("detector_node")
+        self.pub = self.create_publisher(Image, "/object_detection/output", 10)
+        self.sub = self.create_subscription(Image, "/ankbot/camera/image_raw", callback, 10)
+        self.cv_bridge = CvBridge()
+
+    def callback(self, msg):
+        time_now = time.time()
+        img_opencv = self.cv_bridge.imgmsg_to_cv2(msg, desired_encoding="rgb8")
+        bbox, label, conf = cv.detect_common_object(img_opencv)
+        output_image = draw_bbox(img_opencv, bbox, label, conf)
+
+        img_msg = self.cv_bridge.cv2_to_image(output_image, encoding="rgb8")
+        img_msg.header = msg.header
+
+        self.pub.publish(img_msg)
+        self.set_logger().info("detection took {}%s".format(time.time()-time_now))
+
+def main(args = None):
+    rclpy.init(args = args)
+
+    detector = DetectorNode()
+    rclpy.spin(detector)
+    detector.destroy_node()
+    rclpy.shutdown()
+
+if __name__ == "__main__":
+    main()
+```
+
