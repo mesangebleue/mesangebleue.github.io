@@ -33,60 +33,64 @@ permalink: /Voyages/
         <td>Ete 2017</td>
         <td>Grande ballade en Australie </td>
     </tr>
+
     <tr>
-        <td>Ete 2017</td>
-        <td>L'île de la Réunion </td>
-    </tr>
-    <tr>
-        <td>Ete 2017</td>
-        <td>Chine et Mongolie </td>
-    </tr>
-    <tr>
-        <td>Ete 2017</td>
-        <td>Berlin </td>
-    </tr>
-    <tr>
-        <td>Ete 2017</td>
+        <td>Mai 2017</td>
         <td>L'Espagne </td>
     </tr>
     <tr>
-        <td>Ete 2017</td>
+        <td>2017</td>
         <td>L'Italie, les 5 terres </td>
     </tr>
     <tr>
-        <td>Ete 2017</td>
+        <td>Septembre 2015</td>
+        <td>L'île de la Réunion </td>
+    </tr>
+
+
+
+    <tr>
+        <td>Aout 2013</td>
+        <td>Chine et Mongolie </td>
+    </tr>
+    <tr>
+        <td>Ete 2013</td>
+        <td>Berlin </td>
+    </tr>
+    <tr>
+        <td>Mai 2011</td>
         <td>Singapour et Bali </td>
     </tr>
     <tr>
-        <td>Ete 2017</td>
+        <td>2010</td>
         <td>Hong-Kong, Vietnam et Chine </td>
     </tr>
     <tr>
-        <td>Ete 2017</td>
+        <td>Ete 2008</td>
         <td>Quebec et New-York </td>
     </tr>
     <tr>
-        <td>Ete 2017</td>
+        <td>Novembre 2007</td>
         <td>La Guadeloupe </td>
     </tr>
     <tr>
-        <td>Ete 2017</td>
+        <td>Ete 2006</td>
         <td>Cophenague et Stockolm </td>
     </tr>
     <tr>
-        <td>Ete 2017</td>
+        <td>Mai 2005</td>
         <td>L'Argentine </td>
     </tr>
     <tr>
-        <td>Ete 2017</td>
+        <td>Aout 2004</td>
         <td>Chine </td>
     </tr>
     <tr>
-        <td>Ete 2017</td>
+        <td>Novembre 2003</td>
         <td>Thailande et Cambodge </td>
     </tr>
     <tr>
-        <td>Ete 2017</td>
+        <td>Début 2002</td>
         <td>Le tour de la Méditerranée </td>
     </tr>
 </tbody>
