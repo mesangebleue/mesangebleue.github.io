@@ -10,7 +10,7 @@ sidebar:
 ---
 
 
-| Télécharger : | [CV.pdf]({% link /assets/files/cv-FB-IngenieurDev-2020-fr_12102020_v1.pdf %}){: .btn .btn--primary} | [CV.doc]({% link /assets/files/cv-FB-IngenieurDev-2020-fr_12102020_v1.doc %}){: .btn .btn--primary} |
+| Télécharger : | [CV.pdf]({% link /assets/files/cv-FB-IngenieurDev-2025-fr_19102025_v1.pdf %}){: .btn .btn--primary} | [CV.doc]({% link /assets/files/cv-FB-IngenieurDev-2025-fr_19102025_v1.doc %}){: .btn .btn--primary} |
 {: .wide .cvmax}
 
 
@@ -19,7 +19,7 @@ ___
 
 Fabrice Belle
 
-42 ans
+47 ans
 
 Nationalité : Française
 
@@ -33,13 +33,14 @@ Habilitations : Secret Défense, Secret NATO
 
 
 Système et Cyber-Sécurité
-15 ans d'expérience
+20 ans d'expérience
 
 
 ---
 
 ## Compétences clés {#competences-cles}
 
+ - Développement Rust
  - Développement C, C++ en environnement Linux
  - Développement système (OS) et sécurité, virtualisation
  - Développement environnement embarqué, bootloader (Uboot), OpenWRT
@@ -51,11 +52,27 @@ Système et Cyber-Sécurité
  - Administration système (Linux)
 
 Travail dans le domaine de la défense en environnement sécurisé, et dans le domaine de l’embarqué
-
-
+Gestion de certification ANSSI CSPN
 
 
 ## Expériences professionnelles {#experiences-professionnelles}
+
+### 05.2022 – 2025 : Ingénieur senior chez Seckiot
+
+Produit d’analyse réseau pour la cartographie et la détection sur des réseaux industriels (www.seckiot.fr).
+
+Activités :
+- Serveur web en Rust
+- Développement de la PKI de communication pour les micro-services (Hashicorp Vault)
+- Communications entre le concentrateur et les sondes par Kafka
+- Couche d’administration des sondes
+- Gestion du processus pour une certification CSPN
+
+Environnement :
+- Rust
+- Docker
+- Kafka
+- Git, Gitlab, Jira
 
 ### 02.2019 – 2020 : Guarani en mission chez SFR
 
@@ -219,6 +236,9 @@ Stage de maîtrise chez Bull (Grenoble).
 
 ## Techniques :
 
+ - Expertise Rust
+ - Expertise RustExpertise Docker
+ - Expertise Gitlab CI/CD
  - Expertise du C
  - Expertise d'Unix et Linux
  - Maîtrise de C++
@@ -245,6 +265,7 @@ Réseau : IP, TCP, UDP, HTTP, IPSec, IKE, DNS, DHCP, HTTPS, 802.1X
 ## Fonctionnelles :
  - Travail avec l'administration, Institut National de Veille Sanitaire
  - Travail dans le monde de la défense, DGA, CELAR, ANSSI
+ - Suivi d’une certification CSPN
 
 ## Langues
  - Anglais     : lu,écrit, parlé couramment (Voyage de 3 mois aux USA)
